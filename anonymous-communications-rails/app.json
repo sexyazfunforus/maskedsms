@@ -1,0 +1,36 @@
+{
+  "name": "Airtng: Anonymous Communications",
+  "description": "Anonymous Communications (Voice & SMS) with Twilio and Rails",
+  "repository": "https://github.com/TwilioDevEd/anonymous-communications-rails",
+  "success_url": "/landing.html",
+  "keywords": [
+    "anonymous communications", "anonymous calling", "anonymous sms", "customer privacy", "privacy", "cloaked", "2-way anonymous"
+  ],
+  "addons": ["heroku-postgresql:hobby-dev"],
+  "env": {
+    "TWILIO_ACCOUNT_SID": {
+      "description": "Your Twilio account secret ID, you can find at: https://www.twilio.com/user/account",
+
+      "value": "AC8752ffdb3310dd5db4b4d726024797f5",
+      "required": true
+    },
+    "TWILIO_AUTH_TOKEN": {
+      "description": "Your secret Twilio Auth token, you can find at: https://www.twilio.com/user/account",
+      "value": "215133561517df2b26c503afb21de53f",
+      "required": true
+    },
+    "TWILIO_NUMBER": {
+      "description": "The Twilio phone number you are using for this app. You can get one here: https://www.twilio.com/user/account/phone-numbers/incoming",
+      "value": "+16028832251",
+      "required": true
+    },
+    "ANONYMOUS_APPLICATION_SID": {
+      "description": "The Twilio Application SID. You can get one here: https://www.twilio.com/user/account/apps",
+      "value": "AP4a0c56f41ecf95b57c2f6c77edcd5e6b",
+      "required": true
+    },
+  },
+  "scripts": {
+    "postdeploy": "bundle exec rake db:create db:migrate"
+  }
+}
